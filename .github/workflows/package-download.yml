@@ -10,34 +10,47 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Reassemble and verify deployment archive
+      - name: Verify source archive and apply navigation fix
         run: |
           python - <<'PY'
           import hashlib,json
           from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
           manifest=json.loads(Path('bundle/manifest.json').read_text())
+          patch_meta=json.loads(Path('bundle/navigation-fix.json').read_text())
           out=Path('release');out.mkdir()
-          archive=out/manifest['filename']
-          digest=hashlib.sha256()
-          with archive.open('wb') as stream:
+          base=out/'base.zip';digest=hashlib.sha256()
+          with base.open('wb') as stream:
               for part in manifest['parts']:
                   data=Path(part['path']).read_bytes()
                   assert len(data)==part['size'],part['path']
                   assert hashlib.sha256(data).hexdigest()==part['sha256'],part['path']
                   digest.update(data);stream.write(data)
-          assert archive.stat().st_size==manifest['size']
+          assert base.stat().st_size==manifest['size']
           assert digest.hexdigest()==manifest['sha256']
-          (out/'SHA256SUMS.txt').write_text(manifest['sha256']+'  '+manifest['filename']+'\n')
-          from zipfile import ZipFile
+          patch_path=Path(patch_meta['file'])
+          assert patch_path.stat().st_size==patch_meta['size']
+          assert hashlib.sha256(patch_path.read_bytes()).hexdigest()==patch_meta['sha256']
+          archive=out/manifest['filename']
+          with ZipFile(base) as source,ZipFile(patch_path) as patch,ZipFile(archive,'w',ZIP_DEFLATED,compresslevel=6) as target:
+              names=set(patch.namelist())
+              assert names==set(patch_meta['files'])
+              for info in source.infolist():
+                  if info.filename not in names:target.writestr(info,source.read(info.filename))
+              for info in patch.infolist():target.writestr(info,patch.read(info.filename))
           with ZipFile(archive) as z:
               assert z.testzip() is None
-              assert 'index.html' in z.namelist()
-              assert not any('.netlify/' in n for n in z.namelist())
-          print('Deployment ZIP verified:',archive.stat().st_size,'bytes')
+              assert 'preview-ending-navigation.js' in z.namelist()
+              assert b'preview-ending-navigation.js?v=1' in z.read('index.html')
+              assert not any('.netlify/' in name for name in z.namelist())
+          digest=hashlib.sha256(archive.read_bytes()).hexdigest()
+          (out/'SHA256SUMS.txt').write_text(digest+'  '+manifest['filename']+'\n')
+          base.unlink()
+          print('Updated deployment ZIP verified:',archive.stat().st_size,'bytes',digest)
           PY
-      - name: Publish a single ZIP download
+      - name: Update the existing download URL
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          tag="netlify-package-${{ github.run_number }}"
-          gh release create "$tag" release/portfolio-netlify.zip release/SHA256SUMS.txt --target "$GITHUB_SHA" --title "Netlify 作品集部署包" --notes-file DOWNLOAD.md
+          gh release upload netlify-package-1 release/portfolio-netlify.zip release/SHA256SUMS.txt --clobber
+          gh release edit netlify-package-1 --title "Netlify 作品集部署包 · 滑动衔接修复版" --notes-file DOWNLOAD.md

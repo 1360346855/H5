@@ -1,0 +1,15 @@
+{
+  "file": "bundle/navigation-fix.zip",
+  "sha256": "baf5e115955b50b2de07625ec52f114b77943953413cf3a9dfd69092515ee404",
+  "size": 52494,
+  "files": [
+    "index.html",
+    "preview-ending-navigation.js",
+    "preview-ending-navigation.css",
+    "runway-gallery.js",
+    "spatial-depth.js",
+    "bounce-layout.js",
+    "brand-accordion.js",
+    "packaging-lanyard.js"
+  ]
+}

@@ -1,13 +1,10 @@
-# Netlify 作品集部署包
+# Netlify 作品集部署包 · 滑动衔接修复版
 
-这是部署文件下载，网站尚未完成 Netlify 上线。
+已修复作品预览到无限可能的滚动衔接：预览页下滑进入结束页，上滑返回；作品的左右拖动、横向滚动、目录滚动和大图缩放保留。
 
-下载 portfolio-netlify.zip 后解压，把包含 index.html 的目录上传到：
+下载 portfolio-netlify.zip 后解压，将包含 index.html 的整个目录重新上传到原 Netlify 项目的 Deploys 页面：
 https://app.netlify.com/projects/curious-portfolio-1360346855/deploys
 
-首次发布成功后，仅将这个项目的 Project visibility 改为 Public：
-https://app.netlify.com/projects/curious-portfolio-1360346855/configuration/general/#project-visibility
-
-包内包含现有源码中的静态作品、动画、视频与二维码。原管理站云端后来新增的作品尚未同步；管理功能仍留在原站。
-二维码指向预定的 Netlify 地址，待网站正式发布并设为公开后再使用。
-下载文件可用同一 Release 中的 SHA256SUMS.txt 验证完整性。
+此下载包更新不等于 Netlify 网站自动更新。需要完成上传发布后，新交互才会出现在 Netlify 网站上。
+原站云端后来新增的作品尚未同步进静态部署包；管理功能仍在原站。
+包内二维码在 Netlify 网站正式发布并设为公开后使用。
