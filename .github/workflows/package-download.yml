@@ -1,0 +1,43 @@
+name: Publish downloadable Netlify package
+on:
+  push:
+    branches: [deployment-download]
+    paths: ['bundle/**', '.github/workflows/package-download.yml']
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reassemble and verify deployment archive
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          manifest=json.loads(Path('bundle/manifest.json').read_text())
+          out=Path('release');out.mkdir()
+          archive=out/manifest['filename']
+          digest=hashlib.sha256()
+          with archive.open('wb') as stream:
+              for part in manifest['parts']:
+                  data=Path(part['path']).read_bytes()
+                  assert len(data)==part['size'],part['path']
+                  assert hashlib.sha256(data).hexdigest()==part['sha256'],part['path']
+                  digest.update(data);stream.write(data)
+          assert archive.stat().st_size==manifest['size']
+          assert digest.hexdigest()==manifest['sha256']
+          (out/'SHA256SUMS.txt').write_text(manifest['sha256']+'  '+manifest['filename']+'\n')
+          from zipfile import ZipFile
+          with ZipFile(archive) as z:
+              assert z.testzip() is None
+              assert 'index.html' in z.namelist()
+              assert not any('.netlify/' in n for n in z.namelist())
+          print('Deployment ZIP verified:',archive.stat().st_size,'bytes')
+          PY
+      - name: Publish a single ZIP download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="netlify-package-${{ github.run_number }}"
+          gh release create "$tag" release/portfolio-netlify.zip release/SHA256SUMS.txt --target "$GITHUB_SHA" --title "Netlify 作品集部署包" --notes-file DOWNLOAD.md

@@ -1,0 +1,259 @@
+{
+  "filename": "portfolio-netlify.zip",
+  "size": 262959337,
+  "sha256": "d7a30d8c8848931b57ab4e2ab1b86dc780a2ab49cc3f016858ee4436c72a7047",
+  "parts": [
+    {
+      "path": "bundle/part-001.bin",
+      "size": 6291456,
+      "sha256": "aee1423c0cd9c27b48dac8d79951dcaa151966cd79274eb33ab717576317fab4",
+      "git_sha": "d3e1171955cf913798c223050d93dd0bb500a49d"
+    },
+    {
+      "path": "bundle/part-002.bin",
+      "size": 6291456,
+      "sha256": "42b64ca52befbdb45ba4ec6c7721f93c6fad37114225280cf91257cde253f178",
+      "git_sha": "be03599f68c45ddd16145ef208d97e7ee5bed726"
+    },
+    {
+      "path": "bundle/part-003.bin",
+      "size": 6291456,
+      "sha256": "9ab42522d6f51cc2184b98b935e3219c58b4a0cd2acebf911553dcb58ea0da38",
+      "git_sha": "99607e0efe22a455956f367f99f3b9e6d6cbedf0"
+    },
+    {
+      "path": "bundle/part-004.bin",
+      "size": 6291456,
+      "sha256": "e54fc1aeefd57300573f5d9761479ab21057cea6ca300e30aa24ebf80fdff600",
+      "git_sha": "44a3c55e8cb29895e771e63f97acbcc870b21824"
+    },
+    {
+      "path": "bundle/part-005.bin",
+      "size": 6291456,
+      "sha256": "4bd1ea3fc1bda4f937e34875d272edb13ce5776b531679eec89095f4cb7d62fa",
+      "git_sha": "17f8da32cbbcba29eaac81c578f637168d6e29ef"
+    },
+    {
+      "path": "bundle/part-006.bin",
+      "size": 6291456,
+      "sha256": "a127e5219297b93574a260b4b0769e78e079881ac28fdd07e4f032166dc46a0b",
+      "git_sha": "1c4469dda28d40ddcbbc8844909369c95c9c8fd9"
+    },
+    {
+      "path": "bundle/part-007.bin",
+      "size": 6291456,
+      "sha256": "7a2f268849306ff60751683ea2d5162c685247cb43dc9bdfa35119adde7b6aa0",
+      "git_sha": "334468d21ed92ffcc7bbd38074ec07c3f4177e76"
+    },
+    {
+      "path": "bundle/part-008.bin",
+      "size": 6291456,
+      "sha256": "3304a907e2035087c2571d5e84c98cba4bd0e48178e979425ab5895e0075e2c6",
+      "git_sha": "92150ea098249d83a5855b364179f8b082571fd0"
+    },
+    {
+      "path": "bundle/part-009.bin",
+      "size": 6291456,
+      "sha256": "e806238bd7c3296a25936dc9ef00dd8690385ad3dd1e0de8e1014e8dd30d23f2",
+      "git_sha": "cae576d66869d03be2eeca9779561587f9bdeda9"
+    },
+    {
+      "path": "bundle/part-010.bin",
+      "size": 6291456,
+      "sha256": "bc014467cee6eceed0367b3403747ae651f43ff70fa7a925eb1810b192e975a5",
+      "git_sha": "24639377c8b7d2efd04cc96440b54fae5619c717"
+    },
+    {
+      "path": "bundle/part-011.bin",
+      "size": 6291456,
+      "sha256": "cfa3d5f07fa76478f06b601c2fc23e4810a243497df3f99ce55b9e1edfef7b7a",
+      "git_sha": "8f1c49fd25bc5a6d0d6337cd3f51dbd8bac5716d"
+    },
+    {
+      "path": "bundle/part-012.bin",
+      "size": 6291456,
+      "sha256": "10dbc496d7c9e79393be8687f42d439d8637ae2e1e23db2ff5e6ae280270ad1c",
+      "git_sha": "82d1c5eed4265ee03b34da1ea82d919ee887fedc"
+    },
+    {
+      "path": "bundle/part-013.bin",
+      "size": 6291456,
+      "sha256": "393a02d3cea1b99e5c6b356c8cb16e8522e6da925f6841dfe05bd17e73a0c5fe",
+      "git_sha": "d12095452df23f680e7b8d1374acdd22583be16d"
+    },
+    {
+      "path": "bundle/part-014.bin",
+      "size": 6291456,
+      "sha256": "a4ec613098af8b4005272c7967a80bd4d048d51d304a3a70ad2e0601d65a6061",
+      "git_sha": "d0bb573887408693c1602e31796a961e432e9518"
+    },
+    {
+      "path": "bundle/part-015.bin",
+      "size": 6291456,
+      "sha256": "26731e0b89d40d19ac35181b8c491246983b6387584b12ffc3f89724903cd188",
+      "git_sha": "2e3824d1fcfe07bbbd2ac6ef87debe6911fefd03"
+    },
+    {
+      "path": "bundle/part-016.bin",
+      "size": 6291456,
+      "sha256": "b0068f3df32f35c3768b79830bc086fa2dcea6de923204bf3e55cd38bba6ffbb",
+      "git_sha": "74c5c02877ad1a27ceff32880e397450d4eb8a1b"
+    },
+    {
+      "path": "bundle/part-017.bin",
+      "size": 6291456,
+      "sha256": "deb29e3e50cab9d3e9ef8ab505ffb9fb39f1e7c293721ec49903e1f80f5255a9",
+      "git_sha": "685e13108cb16052d5e182c230aa724b27dad486"
+    },
+    {
+      "path": "bundle/part-018.bin",
+      "size": 6291456,
+      "sha256": "e5d77b05e49daeea831434052d1247c48da840260c1b53233ed0d3c8ae0fb4b3",
+      "git_sha": "eabc7c45646311f016cb15f9f95901249405feef"
+    },
+    {
+      "path": "bundle/part-019.bin",
+      "size": 6291456,
+      "sha256": "40e21ba33ae12bbe515b0cd290f1c9a06ef8e89aecd631b66a28570146ff8e39",
+      "git_sha": "f36fbca4e4d31ba9fe4f175389d8a1aabb3d0f9b"
+    },
+    {
+      "path": "bundle/part-020.bin",
+      "size": 6291456,
+      "sha256": "12dd69c687ee6dfd46af8e9ec81fe45aee38eb78ed4a83d3e16e9d2ce1b068e9",
+      "git_sha": "a80d2960efabf9b363d1371a566c2e4e88cff411"
+    },
+    {
+      "path": "bundle/part-021.bin",
+      "size": 6291456,
+      "sha256": "1e0e46d91f57023a258c9ce863240a9d6dd6e4a0acfd855f6f92b10e49119d13",
+      "git_sha": "ff234c8d67efcdf9a01c1a396ed94ab78f000bd9"
+    },
+    {
+      "path": "bundle/part-022.bin",
+      "size": 6291456,
+      "sha256": "5f090994114d1d5c52b80e379f6a567e8facb248c016729c97b7dd4d84f78072",
+      "git_sha": "87ca70a9f1bf774f599a719fe5a687f589df8f00"
+    },
+    {
+      "path": "bundle/part-023.bin",
+      "size": 6291456,
+      "sha256": "a5a73d95a225ae6f33ef35c490763480c6b2973b84e69b4709b63f043ee0236b",
+      "git_sha": "0b3a16ee52cf2f71058f4bc5b284b242c4ceb01e"
+    },
+    {
+      "path": "bundle/part-024.bin",
+      "size": 6291456,
+      "sha256": "927e684c0e90dc4e2888a15ae49dd14262ba1cf0c1e82cc7424a315c053300ed",
+      "git_sha": "d66fc1df304f38986311c1f077b84cd0e2cd6d83"
+    },
+    {
+      "path": "bundle/part-025.bin",
+      "size": 6291456,
+      "sha256": "4d4cab626884ce077ee48153288dda3f87bcf9e347509f41a7058198bd08bcb0",
+      "git_sha": "a1b9c2b730a3f2f890c37493575f957d25cf3aa6"
+    },
+    {
+      "path": "bundle/part-026.bin",
+      "size": 6291456,
+      "sha256": "17cd339b6a012fa81d87bfe968eb6ee53d78648818b05882bbf619d9fc6fc1ee",
+      "git_sha": "efdfde96aa4cc6aab6e66225228502a2e4ed0b36"
+    },
+    {
+      "path": "bundle/part-027.bin",
+      "size": 6291456,
+      "sha256": "3c659bcdf81c8a86b0e2fda422053a25a4a41136afab342fc639aa1e6d99aa26",
+      "git_sha": "125ac36640acc48deb499512f6f5047919cd8ecf"
+    },
+    {
+      "path": "bundle/part-028.bin",
+      "size": 6291456,
+      "sha256": "5247a9bf6e9154ee378aeda3d018981aceb73e11068e46d711643117f0a9d3b0",
+      "git_sha": "92ce9f3c8a98fe30387aa19dd63d6dc697cfbf41"
+    },
+    {
+      "path": "bundle/part-029.bin",
+      "size": 6291456,
+      "sha256": "cb26c349c3ce2456a134d5ddbdb14b3f31fce00859ad0883ff6568f4d2590fd6",
+      "git_sha": "53b728492640165b1b0aca0d28ce307d19f11dbf"
+    },
+    {
+      "path": "bundle/part-030.bin",
+      "size": 6291456,
+      "sha256": "963a36e1f93c48f245262cc1ceabc210836df734e4ba5ddae3268c99f7ba9c9d",
+      "git_sha": "b61ccb9ea26ad30acb95a084fe7ff646ab716f95"
+    },
+    {
+      "path": "bundle/part-031.bin",
+      "size": 6291456,
+      "sha256": "43d1753fc3b9dda30cebf3bb5bfcf62d1d893d96309851d5368cb1cffe6bfc5c",
+      "git_sha": "abc57ee3b6ff13e5570f512c1d46e5f62ca31b8b"
+    },
+    {
+      "path": "bundle/part-032.bin",
+      "size": 6291456,
+      "sha256": "7778ed1d1e923c972159db446f043951179b3723f7446c320df68afd3a3ad40a",
+      "git_sha": "e37de8bd144ce6cfe1e58b0cecfa0159eb129c04"
+    },
+    {
+      "path": "bundle/part-033.bin",
+      "size": 6291456,
+      "sha256": "59747a439df2d3a21dde21ceee1b7cea9b5893a882ac5ad55929c3900820f330",
+      "git_sha": "39544572e22ccf08fcd05cb51d44cc0e2b20bd19"
+    },
+    {
+      "path": "bundle/part-034.bin",
+      "size": 6291456,
+      "sha256": "63951aabda6b944fc71bab0dfdde14225da915ed2b3adedcda69d4b8dbb2e789",
+      "git_sha": "d727def6dd3690e8404e53b974731104074f464d"
+    },
+    {
+      "path": "bundle/part-035.bin",
+      "size": 6291456,
+      "sha256": "4d401f1f7affc4653043a64554e90efe2b75c19c33b126f2a8a5d21bbc31b2db",
+      "git_sha": "89199c1d14d51dd81967ef5b2cb2b4c3e46fd641"
+    },
+    {
+      "path": "bundle/part-036.bin",
+      "size": 6291456,
+      "sha256": "1987b10fd6e813065d0d63b3bc462832fdc6ca2c3f46286dc70cd2a641f6131d",
+      "git_sha": "4829a7f709a4bea4e1449b3add211758999dbe70"
+    },
+    {
+      "path": "bundle/part-037.bin",
+      "size": 6291456,
+      "sha256": "4b93e52aff70fe2a43386f75b89b50642da19a0cf6d3357abec6c55a04e5dca4",
+      "git_sha": "b1f83de06b7ae84e108d9ae5bdfa2010d8b20656"
+    },
+    {
+      "path": "bundle/part-038.bin",
+      "size": 6291456,
+      "sha256": "f371b58d55936047fb8bb0c97a3d439dc8dc9e1ee42b4e0a46beb0722cbaa759",
+      "git_sha": "3097559d7d00754719c25f642fa2df3ae3d6c464"
+    },
+    {
+      "path": "bundle/part-039.bin",
+      "size": 6291456,
+      "sha256": "bbd6476577f5758ece827d3490d9df9f8c90014802c9f4d5f820b4bab501eab5",
+      "git_sha": "8a4219120b2675bf0c1ebe7cdd57fb639bb1ef52"
+    },
+    {
+      "path": "bundle/part-040.bin",
+      "size": 6291456,
+      "sha256": "6f6d0192ec38e3f240ef3bc2138f2ca094e23bf079fd45b1733a4475b1197134",
+      "git_sha": "2d8ab521696499ee0956a4eb513f55bfff7e9a72"
+    },
+    {
+      "path": "bundle/part-041.bin",
+      "size": 6291456,
+      "sha256": "c9b07f1e0f2bd58be16bd6000d301fbc409ea369a9e6f6d9dadee81268dafb52",
+      "git_sha": "19e38c3fe02891650af2696fc645052a4695cc48"
+    },
+    {
+      "path": "bundle/part-042.bin",
+      "size": 5009641,
+      "sha256": "19c45360cd8f6d32c73f28b65f1aa92e792812521a57e2c093a10ebba965487f",
+      "git_sha": "3bd838a6188e79190f6c5c5e669da66eeca09936"
+    }
+  ]
+}
