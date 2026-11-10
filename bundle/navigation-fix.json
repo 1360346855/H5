@@ -1,7 +1,7 @@
 {
   "file": "bundle/navigation-fix.zip",
-  "sha256": "baf5e115955b50b2de07625ec52f114b77943953413cf3a9dfd69092515ee404",
-  "size": 52494,
+  "sha256": "8dfe80892f6e8f63d09e6d3f46474b897e30665c3590c94bec087879e1e4df01",
+  "size": 51974,
   "files": [
     "index.html",
     "preview-ending-navigation.js",
