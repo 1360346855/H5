@@ -1,0 +1,21 @@
+{
+  "file": "bundle/folder-morph-update.zip",
+  "size": 3977485,
+  "sha256": "cc3048b1c9fb67dd3ab454db04421b8a76bede31d241542833c5da7f4c4191b4",
+  "files": [
+    "index.html",
+    "ui-data.js",
+    "runway-gallery.js",
+    "folder-preview-transition.js",
+    "folder-shortcut.js",
+    "ui-morph.js",
+    "ui-morph.css",
+    "document-folder.js",
+    "document-folder.css",
+    "assets/folder-heart-sticker.webp",
+    "assets/ui/summer-board.webp",
+    "assets/ui/summer-cover.webp",
+    "assets/ui/pet-board.webp",
+    "assets/ui/pet-cover.webp"
+  ]
+}

@@ -28,17 +28,29 @@ jobs:
                   digest.update(data);stream.write(data)
           assert base.stat().st_size==manifest['size']
           assert digest.hexdigest()==manifest['sha256']
-          patch_path=Path(patch_meta['file'])
-          assert patch_path.stat().st_size==patch_meta['size']
-          assert hashlib.sha256(patch_path.read_bytes()).hexdigest()==patch_meta['sha256']
+          from contextlib import ExitStack
+          specifications=[patch_meta,json.loads(Path('bundle/folder-morph-update.json').read_text())]
           archive=out/manifest['filename']
-          with ZipFile(base) as source,ZipFile(patch_path) as patch,ZipFile(archive,'w',ZIP_DEFLATED,compresslevel=6) as target:
-              names=set(patch.namelist())
-              removed=set(patch_meta.get('remove',[]))
-              assert names==set(patch_meta['files'])
+          with ExitStack() as stack:
+              patches=[]
+              removed=set()
+              for spec in specifications:
+                  path=Path(spec['file'])
+                  assert path.stat().st_size==spec['size']
+                  assert hashlib.sha256(path.read_bytes()).hexdigest()==spec['sha256']
+                  patch=stack.enter_context(ZipFile(path))
+                  assert set(patch.namelist())==set(spec['files'])
+                  patches.append(patch)
+                  removed.update(spec.get('remove',[]))
+              names=set().union(*(set(p.namelist()) for p in patches))
+              source=stack.enter_context(ZipFile(base))
+              target=stack.enter_context(ZipFile(archive,'w',ZIP_DEFLATED,compresslevel=6))
               for info in source.infolist():
                   if info.filename not in names and info.filename not in removed:target.writestr(info,source.read(info.filename))
-              for info in patch.infolist():target.writestr(info,patch.read(info.filename))
+              for index,patch in enumerate(patches):
+                  later=set().union(*(set(p.namelist()) for p in patches[index+1:])) if index+1<len(patches) else set()
+                  for info in patch.infolist():
+                      if info.filename not in later:target.writestr(info,patch.read(info.filename))
           with ZipFile(archive) as z:
               assert z.testzip() is None
               assert 'preview-ending-navigation.js' in z.namelist()
@@ -46,6 +58,10 @@ jobs:
               assert b"dataset.previewEndingNavigation='protected-gallery'" in z.read('preview-ending-navigation.js')
               assert b'PORTFOLIO_PACKAGING' in z.read('packaging-data.js')
               assert b'PORTFOLIO_UI' in z.read('ui-data.js')
+              assert len(json.loads(z.read('ui-data.js').decode().split('=',1)[1].strip().rstrip(';')))==3
+              assert 'document-folder.js' in z.namelist() and 'ui-morph.js' in z.namelist()
+              (out/'xiabu-ui-board.webp').write_bytes(z.read('assets/ui/summer-board.webp'))
+              (out/'pet-ui-board.webp').write_bytes(z.read('assets/ui/pet-board.webp'))
               (out/'papermaking-ui-board.webp').write_bytes(z.read('assets/ui/papermaking-board.webp'))
               assert 'assets/ui/papermaking-board.webp' in z.namelist()
               assert len([n for n in z.namelist() if n.startswith('assets/packaging/') and n.endswith('-full.webp')])==4
@@ -59,5 +75,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload netlify-package-1 release/portfolio-netlify.zip release/SHA256SUMS.txt release/papermaking-ui-board.webp --clobber
-          gh release edit netlify-package-1 --title "Netlify 作品集部署包 · UI设计与造纸术展板版" --notes-file DOWNLOAD.md
+          gh release upload netlify-package-1 release/portfolio-netlify.zip release/SHA256SUMS.txt release/papermaking-ui-board.webp release/xiabu-ui-board.webp release/pet-ui-board.webp --clobber
+          gh release edit netlify-package-1 --title "Netlify 作品集部署包 · 文件夹与UI融化交互版" --notes-file DOWNLOAD.md
