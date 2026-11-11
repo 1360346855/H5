@@ -1,7 +1,7 @@
 {
   "file": "bundle/navigation-fix.zip",
-  "size": 1876235,
-  "sha256": "ca0d9b0747ec4a88aca5b2619955d67029ad4ea15558231b38d84caa96a23b04",
+  "size": 4029873,
+  "sha256": "05df0b8e92d6c4ac027d9fb7f5df82a3e9d43870a35eb59a21d06a19c7e6658a",
   "files": [
     "index.html",
     "preview-ending-navigation.js",
@@ -24,6 +24,29 @@
     "assets/packaging/modular-first-aid-preview.webp",
     "assets/packaging/kaifeng-peanut-preview.webp",
     "assets/packaging/supnice-design-full.webp",
-    "assets/packaging/supnice-application-full.webp"
+    "assets/packaging/supnice-application-full.webp",
+    "ui-data.js",
+    "ui-design.css",
+    "folder-character.js",
+    "assets/ui/papermaking-cover.webp",
+    "assets/ui/papermaking-board.webp"
+  ],
+  "remove": [
+    "assets/atlases-hq/03.webp",
+    "assets/atlases-hq/01.webp",
+    "assets/atlases-hq/15.webp",
+    "assets/atlases-hq/09.webp",
+    "assets/atlases-hq/02.webp",
+    "assets/atlases-hq/07.webp",
+    "assets/atlases-hq/05.webp",
+    "assets/atlases-hq/11.webp",
+    "assets/atlases-hq/13.webp",
+    "assets/atlases-hq/16.webp",
+    "assets/atlases-hq/06.webp",
+    "assets/atlases-hq/04.webp",
+    "assets/atlases-hq/10.webp",
+    "assets/atlases-hq/14.webp",
+    "assets/atlases-hq/12.webp",
+    "assets/atlases-hq/08.webp"
   ]
 }
