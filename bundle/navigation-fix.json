@@ -1,7 +1,7 @@
 {
   "file": "bundle/navigation-fix.zip",
-  "sha256": "8dfe80892f6e8f63d09e6d3f46474b897e30665c3590c94bec087879e1e4df01",
-  "size": 51974,
+  "size": 62202,
+  "sha256": "449e2cc061725320717c750fbe27800a620c81993492dc8e0994d137e0945c4a",
   "files": [
     "index.html",
     "preview-ending-navigation.js",
@@ -10,6 +10,10 @@
     "spatial-depth.js",
     "bounce-layout.js",
     "brand-accordion.js",
-    "packaging-lanyard.js"
+    "packaging-lanyard.js",
+    "mobile-layout.css",
+    "touch-interactions.js",
+    "folder-shortcut.js",
+    "scene-ripple.js"
   ]
 }
