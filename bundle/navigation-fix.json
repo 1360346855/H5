@@ -1,7 +1,7 @@
 {
   "file": "bundle/navigation-fix.zip",
-  "size": 62202,
-  "sha256": "449e2cc061725320717c750fbe27800a620c81993492dc8e0994d137e0945c4a",
+  "size": 1876235,
+  "sha256": "ca0d9b0747ec4a88aca5b2619955d67029ad4ea15558231b38d84caa96a23b04",
   "files": [
     "index.html",
     "preview-ending-navigation.js",
@@ -14,6 +14,16 @@
     "mobile-layout.css",
     "touch-interactions.js",
     "folder-shortcut.js",
-    "scene-ripple.js"
+    "scene-ripple.js",
+    "portfolio-content.js",
+    "packaging-data.js",
+    "assets/packaging/kaifeng-peanut-full.webp",
+    "assets/packaging/supnice-design-preview.webp",
+    "assets/packaging/modular-first-aid-full.webp",
+    "assets/packaging/supnice-application-preview.webp",
+    "assets/packaging/modular-first-aid-preview.webp",
+    "assets/packaging/kaifeng-peanut-preview.webp",
+    "assets/packaging/supnice-design-full.webp",
+    "assets/packaging/supnice-application-full.webp"
   ]
 }
