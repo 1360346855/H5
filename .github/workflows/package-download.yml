@@ -81,4 +81,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload netlify-package-1 release/portfolio-netlify.zip release/SHA256SUMS.txt release/papermaking-ui-board.webp release/xiabu-ui-board.webp release/pet-ui-board.webp --clobber
-          gh release edit netlify-package-1 --title "Netlify 作品集部署包 · 七张文件同时展开版" --notes-file DOWNLOAD.md
+          gh release edit netlify-package-1 --title "Netlify 作品集部署包 · 文件选择定位修复版" --notes-file DOWNLOAD.md
