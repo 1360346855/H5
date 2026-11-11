@@ -1,0 +1,19 @@
+{
+  "file": "bundle/folder-posters-update.zip",
+  "size": 972864,
+  "sha256": "2f310b80583f1083916b3eedf4697957f832b66b6eeaebb4257276c47560f122",
+  "files": [
+    "index.html",
+    "document-folder.js",
+    "document-folder.css",
+    "ui-morph.js",
+    "ui-morph.css",
+    "poster-data.js",
+    "assets/posters/original/nice-fresh-motion.webp",
+    "assets/posters/original/nice-garden-care.webp",
+    "assets/posters/original/nice-health-guard.webp",
+    "assets/posters/preview/nice-fresh-motion.webp",
+    "assets/posters/preview/nice-garden-care.webp",
+    "assets/posters/preview/nice-health-guard.webp"
+  ]
+}

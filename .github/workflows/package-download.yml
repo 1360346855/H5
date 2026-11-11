@@ -29,7 +29,7 @@ jobs:
           assert base.stat().st_size==manifest['size']
           assert digest.hexdigest()==manifest['sha256']
           from contextlib import ExitStack
-          specifications=[patch_meta,json.loads(Path('bundle/folder-morph-update.json').read_text())]
+          specifications=[patch_meta,json.loads(Path('bundle/folder-morph-update.json').read_text()),json.loads(Path('bundle/folder-posters-update.json').read_text())]
           archive=out/manifest['filename']
           with ExitStack() as stack:
               patches=[]
@@ -60,6 +60,11 @@ jobs:
               assert b'PORTFOLIO_UI' in z.read('ui-data.js')
               assert len(json.loads(z.read('ui-data.js').decode().split('=',1)[1].strip().rstrip(';')))==3
               assert 'document-folder.js' in z.namelist() and 'ui-morph.js' in z.namelist()
+              posters=json.loads(z.read('poster-data.js').decode().split('=',1)[1].strip().rstrip(';'))
+              assert len(posters)==50
+              assert len([p for p in posters if p.get('series')=='纳爱斯口腔护理'])==3
+              assert b'docf-expression' in z.read('document-folder.js')
+              assert b'fallback.draggable=false' in z.read('ui-morph.js')
               (out/'xiabu-ui-board.webp').write_bytes(z.read('assets/ui/summer-board.webp'))
               (out/'pet-ui-board.webp').write_bytes(z.read('assets/ui/pet-board.webp'))
               (out/'papermaking-ui-board.webp').write_bytes(z.read('assets/ui/papermaking-board.webp'))
@@ -76,4 +81,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload netlify-package-1 release/portfolio-netlify.zip release/SHA256SUMS.txt release/papermaking-ui-board.webp release/xiabu-ui-board.webp release/pet-ui-board.webp --clobber
-          gh release edit netlify-package-1 --title "Netlify 作品集部署包 · 文件夹与UI融化交互版" --notes-file DOWNLOAD.md
+          gh release edit netlify-package-1 --title "Netlify 作品集部署包 · 表情文件夹与新增海报版" --notes-file DOWNLOAD.md
