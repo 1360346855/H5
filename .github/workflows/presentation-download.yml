@@ -1,4 +1,4 @@
-name: Publish presentation and full version archive
+name: Publish self-contained presentation with editable version register
 on:
   push:
     branches: [deployment-download]
@@ -12,18 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Rebuild and verify editable presentation
         run: python presentation/rebuild.py
-      - name: Verify and expand version archive
-        run: python presentation/publish-history.py
-      - name: Publish download files and verified Netlify QR
+      - name: Publish self-contained PPT and backup ZIP
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload netlify-package-1 release/Curious_Project_Presentation_Iteration.pptx release/Curious_Project_Presentation_Iteration.zip release/Curious_Version_History.zip release/Curious_Latest_QR.png release/Curious_Latest_QR.svg release/Curious_Versions.csv --clobber
-      - name: Publish browseable per-version links
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add history
-          if ! git diff --cached --quiet; then
-            git commit -m 'Publish 124 source-restored version snapshots and link directory'
-            git push origin HEAD:deployment-download
-          fi
+        run: gh release upload netlify-package-1 release/Curious_Project_Presentation_Integrated.pptx release/Curious_Project_Presentation_Integrated.zip --clobber

@@ -13,7 +13,8 @@
 
 1. [初版：深色参考风格，45 页](https://github.com/1360346855/H5/releases/download/netlify-package-1/Curious_Project_Presentation.pptx)
 2. [重设计版：奶油白与角色视觉，45 页](https://github.com/1360346855/H5/releases/download/netlify-package-1/Curious_Project_Presentation_Redesigned.pptx)
-3. [当前版：统一浅色章节、真实迭代对比与制作流程截图，48 页](https://github.com/1360346855/H5/releases/download/netlify-package-1/Curious_Project_Presentation_Iteration.pptx)
+3. [迭代对比版：统一浅色章节、真实迭代对比与制作流程截图，48 页](https://github.com/1360346855/H5/releases/download/netlify-package-1/Curious_Project_Presentation_Iteration.pptx)
+4. [当前版：暖白橙棕、11个代表版本与页内跳转，48页](https://github.com/1360346855/H5/releases/download/netlify-package-1/Curious_Project_Presentation_Integrated.pptx)
 
 ## 变化明显的几个阶段
 
