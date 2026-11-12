@@ -32,6 +32,6 @@ with ZipFile(deck) as z:
     assert set(z.namelist()) == set(manifest['members'])
     for name, spec in manifest['members'].items():
         checked(z.read(name), spec)
-with ZipFile(out/'Curious_Project_Presentation_Redesigned.zip', 'w', ZIP_DEFLATED) as z:
+with ZipFile(out/'Curious_Project_Presentation_Iteration.zip', 'w', ZIP_DEFLATED) as z:
     z.write(deck, deck.name)
 print('Verified editable presentation:', deck.stat().st_size, 'bytes')
