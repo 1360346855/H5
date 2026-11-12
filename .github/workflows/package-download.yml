@@ -62,7 +62,11 @@ jobs:
               assert 'document-folder.js' in z.namelist() and 'ui-morph.js' in z.namelist()
               posters=json.loads(z.read('poster-data.js').decode().split('=',1)[1].strip().rstrip(';'))
               assert len(posters)==50
-              assert posters[0]['id']=='poster-42'
+              assert [x['id'] for x in posters[:3]]==['poster-42','poster-44','poster-45']
+              assert b'portfolio-typography.css?v=4' in z.read('index.html')
+              assert b'width:54%' in z.read('portfolio-typography.css')
+              assert 'dialog-theme.css' in z.namelist()
+              assert 'assets/fonts/portfolio-title-light.woff' in z.namelist()
               assert 'portfolio-typography.css' in z.namelist()
               assert 'assets/fonts/portfolio-song.woff' in z.namelist()
               assert len([p for p in posters if p.get('series')=='纳爱斯口腔护理'])==3
@@ -92,4 +96,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload netlify-package-1 release/portfolio-netlify.zip release/SHA256SUMS.txt release/papermaking-ui-board.webp release/xiabu-ui-board.webp release/pet-ui-board.webp --clobber
-          gh release edit netlify-package-1 --title "Netlify 作品集部署包 · 艺术字体与手机画圈互动版" --notes-file DOWNLOAD.md
+          gh release edit netlify-package-1 --title "Netlify 作品集部署包 · 最新完整版 · 标题与履历排版更新" --notes-file DOWNLOAD.md
