@@ -67,6 +67,7 @@ jobs:
               assert b'docf-original-stickers' in z.read('document-folder.js')
               assert b'--dock-top' in z.read('document-folder.css')
               assert b'document-folder.js?v=12' in z.read('index.html')
+              assert '好奇有形' in z.read('index.html').decode()
               assert b'fallback.draggable=false' in z.read('ui-morph.js')
               assert b'delta>14&&scrollY' not in z.read('index.html')
               assert b'kaifeng-peanut-trimmed.svg' in z.read('packaging-data.js')
@@ -88,4 +89,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload netlify-package-1 release/portfolio-netlify.zip release/SHA256SUMS.txt release/papermaking-ui-board.webp release/xiabu-ui-board.webp release/pet-ui-board.webp --clobber
-          gh release edit netlify-package-1 --title "Netlify 作品集部署包 · 文件页新配色与手机交互修复版" --notes-file DOWNLOAD.md
+          gh release edit netlify-package-1 --title "Netlify 作品集部署包 · 好奇有形 · Curious" --notes-file DOWNLOAD.md
