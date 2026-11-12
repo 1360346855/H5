@@ -15,4 +15,4 @@ jobs:
       - name: Publish presentation download files
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload netlify-package-1 release/Curious_Project_Presentation.pptx release/Curious_Project_Presentation.zip --clobber
+        run: gh release upload netlify-package-1 release/Curious_Project_Presentation_Redesigned.pptx release/Curious_Project_Presentation_Redesigned.zip --clobber

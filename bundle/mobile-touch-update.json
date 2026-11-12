@@ -1,0 +1,10 @@
+{
+  "file": "bundle/mobile-touch-update.zip",
+  "size": 43897,
+  "sha256": "63bbe771896eac02bfa83b5950008d5c8c231722e5eb85bdf2ae948808a28c5a",
+  "files": [
+    "index.html",
+    "mobile-layout.css",
+    "touch-interactions.js"
+  ]
+}
